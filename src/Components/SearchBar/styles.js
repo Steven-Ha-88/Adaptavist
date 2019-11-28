@@ -9,9 +9,19 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: ${props => (props.direction ? "row" : "column")};
+  flex-direction: ${props => (props.row ? "row" : "column")};
   justify-content: center;
   align-items: center;
+`;
+
+export const Error = styled.div`
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 4px;
 `;
 
 export const Input = styled.input`
