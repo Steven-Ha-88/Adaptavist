@@ -1,3 +1,4 @@
 export const FETCH_WEATHER = "FETCH_WEATHER";
 export const FETCH_DETAILS = "FETCH_DETAILS";
 export const FETCH_WEATHER_ERROR = "FETCH_WEATHER_ERROR";
+export const FETCH_NAME = "FETCH_NAME";

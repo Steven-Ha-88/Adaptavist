@@ -15,6 +15,9 @@ export const Brand = styled.h1`
   color: white;
   margin-left: 10px;
   font-size: 30px;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 export const Globalstyle = createGlobalStyle`

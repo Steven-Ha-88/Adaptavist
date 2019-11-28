@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.h1`
+  display: flex;
+  justify-content: center;
+`;
+
+export const City = styled.div`
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+`;
+
+export const Card = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -9,7 +22,7 @@ export const Container = styled.div`
   padding: 20px 80px 20px 80px;
 `;
 
-export const Card = styled.div`
+export const CardItem = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   color: black;
@@ -19,6 +32,11 @@ export const Card = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 30px;
+  border-radius: 8px;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  }
 `;
 
 export const CardImg = styled.img`

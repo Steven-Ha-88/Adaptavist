@@ -1,4 +1,9 @@
-import { FETCH_WEATHER, FETCH_DETAILS, FETCH_WEATHER_ERROR } from "./types";
+import {
+  FETCH_WEATHER,
+  FETCH_DETAILS,
+  FETCH_WEATHER_ERROR,
+  FETCH_NAME
+} from "./types";
 import weatherApi from "./../api";
 import history from "./../history";
 
@@ -11,9 +16,10 @@ export const getData = city => async dispatch => {
       }
     });
 
-    console.log(response.data);
+    console.log("response", response.data.list);
     dispatch({ type: FETCH_WEATHER, payload: response.data.list });
-    history.push("/forecast");
+    dispatch({ type: FETCH_NAME, payload: response.data.city.name });
+    history.push("/weather");
   } catch (e) {
     dispatch({
       type: FETCH_WEATHER_ERROR,

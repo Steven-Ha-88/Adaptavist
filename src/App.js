@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
-import Forecast from "./Components/Forecasts/Forecasts";
-import WeatherDetail from "./Components/WeatherDetails/WeatherDetail";
+import Weather from "./Components/Forecasts/Forecasts";
+import WeatherForecast from "./Components/WeatherDetails/WeatherDetail";
 import { Router, Route } from "react-router-dom";
 import history from "./history";
 
@@ -13,8 +13,8 @@ const App = () => {
         <div>
           <Header />
           <Route path="/" exact component={Home} />
-          <Route path="/forecast" exact component={Forecast} />
-          <Route path="/weather" exact component={WeatherDetail} />
+          <Route path="/weather" exact component={Weather} />
+          <Route path="/forecast/:id" exact component={WeatherForecast} />
         </div>
       </Router>
     </div>
