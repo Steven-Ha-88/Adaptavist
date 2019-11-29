@@ -19,6 +19,11 @@ import {
   SVG50n
 } from "../images/index";
 
+export const toCelcius = kel => {
+  const temp = Math.round(kel - 273.15);
+  return temp;
+};
+
 export const weatherImg = term => {
   const { icon } = term.weather[0];
 

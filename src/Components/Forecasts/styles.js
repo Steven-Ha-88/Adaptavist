@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.h1`
+export const CurrentWeather = styled.div`
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
 `;
 
 export const City = styled.div`

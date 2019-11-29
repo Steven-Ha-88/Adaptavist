@@ -3,7 +3,8 @@ import {
   //FETCH_DETAILS,
   FETCH_WEATHER_ERROR,
   FETCH_NAME,
-  LOADING
+  LOADING,
+  FETCH_DETAILS
   //FILTER_DAY
   //FILTER_HOUR
 } from "./types";
@@ -30,6 +31,11 @@ const loading = () => ({
   type: LOADING
 });
 
+const fetchDetailSuccess = data => ({
+  type: FETCH_DETAILS,
+  payload: data
+});
+
 export const getData = city => async dispatch => {
   dispatch(loading());
   try {
@@ -48,23 +54,22 @@ export const getData = city => async dispatch => {
   }
 };
 
-// export const getCurrentWeather = city => async dispatch => {
-//   dispatch(loading());
-//   try {
-//     const response = await weatherApi.get("/data/2.5/forecast", {
-//       params: {
-//         q: city,
-//         appid: "bcf9d23e76dcc63bc158942ceea4c302"
-//       }
-//     });
-//     // console.log("response", response.data.list);
-//     dispatch(fetchDataSuccess(response.data.list));
-//     dispatch(fetchName(response.data.city.name));
-//     history.push("/weather");
-//   } catch (e) {
-//     dispatch(fetchDataErr("City/State not found!"));
-//   }
-// };
+export const getCurrentWeather = city => async dispatch => {
+  try {
+    const response = await weatherApi.get("/data/2.5/weather", {
+      params: {
+        q: city,
+        appid: "bcf9d23e76dcc63bc158942ceea4c302"
+      }
+    });
+    console.log("response", response);
+    dispatch(fetchDetailSuccess(response.data));
+    history.push("/weather");
+  } catch (e) {
+    dispatch(fetchDataErr("City/State not found!"));
+  }
+};
+
 // export const filterByDay = () => (dispatch, getState) => {
 //   const { forecast } = getState().weather;
 //   const distinct = [

@@ -3,16 +3,13 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import { Card, CardItem, CardImg, Day } from "./styles";
 import { weatherImg } from "../../Utils/index";
+import { toCelcius } from "./../../Utils";
+
 const WeatherDetail = props => {
   const day = props.match.params.id;
   const list = useSelector(state => state.weather.forecast);
   const city = useSelector(state => state.weather.city);
   const filteredList = list.filter(item => item.dt_txt.match(`${day}`));
-
-  const toCelcius = kel => {
-    const temp = Math.round(kel - 273.15);
-    return temp;
-  };
 
   return (
     <>

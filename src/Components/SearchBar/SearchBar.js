@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Input, Container, Button, Form, Error } from "./styles";
-import { getData } from "./../../Actions/index";
+import { getData, getCurrentWeather } from "./../../Actions/index";
 
 const SearchBar = props => {
   const { row } = props;
@@ -12,6 +12,7 @@ const SearchBar = props => {
   const handleClick = e => {
     e.preventDefault();
     dispatch(getData(city));
+    dispatch(getCurrentWeather(city));
   };
 
   return (

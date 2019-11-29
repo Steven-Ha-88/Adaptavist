@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Nav, Brand, Globalstyle } from "./styles";
 import SearchBar from "../SearchBar/SearchBar";
