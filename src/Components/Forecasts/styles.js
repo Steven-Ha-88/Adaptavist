@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const CurrentWeather = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  width: 100%;
-`;
-
 export const City = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -20,28 +13,36 @@ export const Card = styled.div`
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: flex-end;
-  height: 500px;
   padding: 20px 80px 20px 80px;
 `;
 
 export const CardItem = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 100;
+  display: flex;
   color: black;
   font-size: 15px;
-  display: flex;
+
+  width: ${props => (props.row ? "500px" : "")};
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: ${props => (props.row ? "space-evenly" : "center")};
+  flex-direction: ${props => (props.row ? "row" : "column")};
   padding: 30px;
   border-radius: 8px;
+
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
+    ${props =>
+      props.row ? "" : "box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2)"};
   }
 `;
 
 export const CardImg = styled.img`
-  height: 100px;
-  width: 100px;
+  height: ${props => (props.row ? "180px" : "100px")};
+  width: ${props => (props.row ? "180px" : "100px")};
+`;
+
+export const CardDesc = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
 `;

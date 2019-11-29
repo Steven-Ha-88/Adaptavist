@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Input, Container, Button, Form, Error } from "./styles";
+import { Input, Container, Button, Form } from "./styles";
 import { getData, getCurrentWeather } from "./../../Actions/index";
 
 const SearchBar = props => {
@@ -13,6 +13,7 @@ const SearchBar = props => {
     e.preventDefault();
     dispatch(getData(city));
     dispatch(getCurrentWeather(city));
+    setCity("");
   };
 
   return (
@@ -20,10 +21,12 @@ const SearchBar = props => {
       <Form onSubmit={handleClick} row={row}>
         <Input
           onChange={e => setCity(e.target.value)}
-          placeholder="St. George, Utah"
+          placeholder={`${error ? error : "St. George, Utah"}`}
+          value={city}
+          err={error}
         />
+        {/* {error ? <Error>{error}</Error> : null} */}
         <Button>Get Weather</Button>
-        {error ? <Error>{error}</Error> : null}
       </Form>
     </Container>
   );

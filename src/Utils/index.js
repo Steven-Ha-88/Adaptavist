@@ -25,9 +25,7 @@ export const toCelcius = kel => {
 };
 
 export const weatherImg = term => {
-  const { icon } = term.weather[0];
-
-  switch (icon) {
+  switch (term) {
     case "01d":
       return SVG1d;
     case "01n":

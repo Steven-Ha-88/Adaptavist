@@ -9,19 +9,9 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: ${props => (props.row ? "row" : "column")};
+  flex-flow: ${props => (props.row ? "row" : "column")};
   justify-content: center;
   align-items: center;
-`;
-
-export const Error = styled.div`
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  padding: 10px;
-  background-color: red;
-  color: white;
-  border-radius: 4px;
 `;
 
 export const Input = styled.input`
@@ -30,8 +20,12 @@ export const Input = styled.input`
   border-radius: 4px;
   padding: 6px 12px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 2px solid;
+  border-color: ${props => (props.err ? "#ff0000" : "#ccc")};
   border-radius: 4px;
+  ::placeholder {
+    color: ${props => (props.err ? "#ff0000" : "#ccc")};
+  }
 `;
 
 export const Button = styled.button`

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { SVG1d } from "./../../images/index";
-import { Card, CardItem, CardImg, City, CurrentWeather } from "./styles";
+import { Card, CardItem, CardImg, City, CardDesc } from "./styles";
 import { toCelcius, weatherImg } from "./../../Utils";
 
 const Forecasts = () => {
@@ -11,7 +11,7 @@ const Forecasts = () => {
   const city = useSelector(state => state.weather.city);
   const current = useSelector(state => state.weather.current);
   const loading = useSelector(state => state.weather.loading);
-  console.log(current);
+
   const distinct = [...new Set(list.map(data => data.dt_txt.slice(0, 10)))];
   const convertDate = distinct.map(e => moment(e).format("dddd, MMMM Do"));
   const date = convertDate.map((value, index) => ({
@@ -20,10 +20,25 @@ const Forecasts = () => {
     date: value
   }));
 
+  const icon = weatherImg(current.weather && current.weather[0].icon);
+
   return (
     <>
-      <City>{loading ? <p>loading...</p> : <h1>{city}</h1>}</City>
-
+      <City>{loading ? <h1>loading...</h1> : <h1>{city}</h1>}</City>
+      <Card>
+        <CardItem row>
+          <CardImg src={icon} row />
+          <CardDesc>
+            <p>{current.weather && current.weather[0].description}</p>
+            <p>temp: {toCelcius(current.main && current.main.temp)}°C</p>
+            <p>Humidity: {current.main && current.main.humidity}</p>
+            <p>Pressure: {current.main && current.main.pressure}</p>
+          </CardDesc>
+        </CardItem>
+      </Card>
+      <City>
+        <h1>Days</h1>
+      </City>
       <Card>
         {date.map(item => {
           return (

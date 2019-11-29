@@ -19,7 +19,7 @@ const WeatherDetail = props => {
       </Day>
       <Card>
         {filteredList.map(item => {
-          const icon = weatherImg(item);
+          const icon = weatherImg(item.weather[0].icon);
           return (
             <CardItem key={item.dt}>
               <CardImg src={icon} alt="weather icon" />
