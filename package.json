@@ -35,7 +35,6 @@
       "not dead",
       "not op_mini all"
     ],
-    
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -54,7 +53,6 @@
     "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",
     "jest-enzyme": "^7.1.2",
-    "moxios": "^0.4.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0"
   }
