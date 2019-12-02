@@ -31,6 +31,11 @@ REACT_APP_API_KEY = (API_KEY)
 
 ---
 
+## Testing
+
+    $ npm run test
+
+if you do not see any test being run, hit the A key to run all tests.
 
 ## Languages & tools
 

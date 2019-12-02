@@ -19,15 +19,12 @@ export default (state = initialState, action) => {
     case LOADING:
       return { ...state, loading: true };
     case FETCH_WEATHER:
-      console.log("FETCH_WEATHER SUCCESS!");
       return { ...state, forecast: action.payload, error: "", loading: false };
     case FETCH_WEATHER_ERROR:
       return { ...state, error: action.payload, loading: false };
     case FETCH_NAME:
-      console.log("FETCH_NAME SUCCESS");
       return { ...state, city: action.payload };
     case FETCH_DETAILS:
-      console.log("FETCH_DETAILS SUCCESS");
       return { ...state, current: action.payload, loading: false, error: "" };
     default:
       return state;

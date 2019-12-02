@@ -7,7 +7,6 @@ import {
 } from "./types";
 import weatherApi from "./../api";
 import history from "./../history";
-//import moment from "moment";
 
 const fetchDataSuccess = data => ({
   type: FETCH_WEATHER,
@@ -65,18 +64,3 @@ export const getCurrentWeather = city => async dispatch => {
     dispatch(fetchDataErr("City/State not found!"));
   }
 };
-
-// export const filterByDay = () => (dispatch, getState) => {
-//   const { forecast } = getState().weather;
-//   const distinct = [
-//     ...new Set(forecast && forecast.map(data => data.dt_txt.slice(0, 10)))
-//   ];
-//   const convertDate = distinct.map(e => moment(e).format("dddd, MMMM Do"));
-//   const date = convertDate.map((value, index) => ({
-//     id: index + 1,
-//     dist: distinct[index], // same index to ref distinct array and length is same
-//     date: value
-//   }));
-//   console.log("klkjn", forecast);
-//   dispatch(filterDay(date));
-// };
