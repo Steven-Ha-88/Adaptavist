@@ -1,12 +1,11 @@
 ## Requirements
 This React application can do the following:
 
-- User can type in a city/state in search box. After clicking on the "Get Weather" button,
-user is redirected to another page where the current weather of that city is shown. A 5 day forecast is also shown where the user can click on a day and view 5day/3 hour forecast details. 
-
+- Enter city/state in searchbox to view current weather.
+- Enter city/state in searchbox to view 5 day forecast.
+- Click on day to view hourly forecast for day.
 - Click "The Weather" logo to return back to home screen.
 - Click city name to return back to current weather page.
-
   
 ## Installation
 Please make sure you have node installed on your machine. 
@@ -15,6 +14,23 @@ Change into project directory and install node_modules by running the following 
 
     $ cd PROJECT
     $ npm install
+
+## Adding API key
+Create an .env file into the project directory:
+
+    $ touch .env
+    $ open .env
+
+As the file opens, enter the api key and save under the following format:
+
+REACT_APP_API_KEY = (API_KEY)
+
+## Start
+
+    $ npm start
+
+---
+
 
 ## Languages & tools
 
