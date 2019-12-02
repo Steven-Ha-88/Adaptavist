@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Header from "./Header";
+import Header from "./index";
 import { findTestAttr } from "./../../Utils";
 import toJson from "enzyme-to-json";
 

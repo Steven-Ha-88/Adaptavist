@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Components/Header/Header";
-import Home from "./Components/Home/Home";
-import Weather from "./Components/Forecasts/Forecasts";
+import Header from "./Components/Header";
+import Home from "./Components/Home";
+import Weather from "./Components/Forecasts";
 import WeatherForecast from "./Components/WeatherDetails/WeatherDetail";
 import { Router, Route } from "react-router-dom";
 import history from "./history";

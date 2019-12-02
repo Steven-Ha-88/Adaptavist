@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Input, Container, Button, Form } from "./styles";
-import { getData, getCurrentWeather } from "./../../Actions/index";
+import { getData, getCurrentWeather } from "../../Actions/index";
 import PropTypes from "prop-types";
 
 const SearchBar = props => {

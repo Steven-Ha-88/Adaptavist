@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Nav, Brand, Globalstyle } from "./styles";
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar";
 
 const Header = () => {
   return (

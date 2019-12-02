@@ -17,6 +17,7 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1"
   },
+  "homepage": "https://steven-ha-88.github.io/Adaptavist",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,7 +35,7 @@
       "not dead",
       "not op_mini all"
     ],
-    "homepage": "https://steven-ha-88.github.io/Adaptavist/",
+    
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
