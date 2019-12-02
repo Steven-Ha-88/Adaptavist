@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { SVG1d } from "./../../images/index";
-import { Card, CardItem, CardImg, City, CardDesc } from "./styles";
+import { Container, Card, CardItem, CardImg, Title, CardDesc } from "./styles";
 import { toCelcius, weatherImg } from "./../../Utils";
 
 const Forecasts = () => {
@@ -23,12 +23,14 @@ const Forecasts = () => {
   const icon = weatherImg(current.weather && current.weather[0].icon);
 
   return (
-    <>
-      <City>{loading ? <h1>loading...</h1> : <h1>{city}</h1>}</City>
-      <Card>
-        <CardItem row>
-          <CardImg src={icon} row />
-          <CardDesc>
+    <Container data-test="Forecast Component">
+      <Title data-test="title">
+        {loading ? <h1>loading...</h1> : <h1>{city}</h1>}
+      </Title>
+      <Card data-test="card">
+        <CardItem row data-test="card-item">
+          <CardImg src={icon} row data-test="card-img" />
+          <CardDesc data-test="card-desc">
             <p>{current.weather && current.weather[0].description}</p>
             <p>temp: {toCelcius(current.main && current.main.temp)}°C</p>
             <p>Humidity: {current.main && current.main.humidity}</p>
@@ -36,10 +38,10 @@ const Forecasts = () => {
           </CardDesc>
         </CardItem>
       </Card>
-      <City>
+      <Title data-test="title">
         <h1>Days</h1>
-      </City>
-      <Card>
+      </Title>
+      <Card data-test="card">
         {date.map(item => {
           return (
             <Link
@@ -47,15 +49,15 @@ const Forecasts = () => {
               style={{ textDecoration: "none" }}
               key={item.id}
             >
-              <CardItem key={item.id}>
-                <CardImg src={SVG1d} alt="sun" />
+              <CardItem key={item.id} data-test="card-item">
+                <CardImg src={SVG1d} alt="sun" data-test="card-img" />
                 <h3>{item.date}</h3>
               </CardItem>
             </Link>
           );
         })}
       </Card>
-    </>
+    </Container>
   );
 };
 

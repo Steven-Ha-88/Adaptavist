@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Should match snapshot 1`] = `
+<styled.div
+  data-test="header"
+>
+  <GlobalStyleComponent />
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/"
+  >
+    <styled.h1
+      data-test="logo"
+    >
+       My Weather App 
+    </styled.h1>
+  </Link>
+  <SearchBar
+    data-test="search"
+    row={true}
+  />
+</styled.div>
+`;

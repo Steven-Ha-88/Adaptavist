@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.h1`
   display: flex;
@@ -12,6 +13,14 @@ export const Day = styled.div`
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: "black";
+  font-size: 30px;
+  margin-top: 30px;
+  color: black;
 `;
 
 export const Card = styled.div`

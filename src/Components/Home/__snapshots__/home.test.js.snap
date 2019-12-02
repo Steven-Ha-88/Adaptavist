@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component Have no props Should match snapshot 1`] = `
+<styled.div
+  data-test="HomeComponent"
+>
+  <styled.h1
+    data-test="title"
+  >
+    Enter a City and State
+  </styled.h1>
+  <SearchBar
+    data-test="search"
+  />
+</styled.div>
+`;

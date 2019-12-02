@@ -10,7 +10,7 @@ const Header = () => {
       <Link to="/" style={{ textDecoration: "none" }}>
         <Brand data-test="logo"> My Weather App </Brand>
       </Link>
-      <SearchBar row />
+      <SearchBar data-test="search" row />
     </Nav>
   );
 };

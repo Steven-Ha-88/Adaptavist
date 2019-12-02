@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
-import { Card, CardItem, CardImg, Day } from "./styles";
+import PropTypes from "prop-types";
+import { Card, CardItem, CardImg, Day, StyledLink } from "./styles";
 import { weatherImg } from "../../Utils/index";
 import { toCelcius } from "./../../Utils";
+import { Link } from "react-router-dom";
 
 const WeatherDetail = props => {
   const day = props.match.params.id;
@@ -14,7 +16,9 @@ const WeatherDetail = props => {
   return (
     <>
       <Day>
-        <h1>{city}</h1>
+        <StyledLink className={Link} to="/weather">
+          {city}
+        </StyledLink>
         <h2>{moment(day).format("dddd, MMMM Do")}</h2>
       </Day>
       <Card>
@@ -34,6 +38,14 @@ const WeatherDetail = props => {
       </Card>
     </>
   );
+};
+
+WeatherDetail.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  })
 };
 
 export default WeatherDetail;

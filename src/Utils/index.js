@@ -19,6 +19,11 @@ import {
   SVG50n
 } from "../images/index";
 
+export const findTestAttr = (component, attribute) => {
+  const wrapper = component.find(`[data-test="${attribute}"]`);
+  return wrapper;
+};
+
 export const toCelcius = kel => {
   const temp = Math.round(kel - 273.15);
   return temp;

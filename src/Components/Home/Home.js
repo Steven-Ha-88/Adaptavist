@@ -4,9 +4,9 @@ import { Title, Container } from "./styles";
 
 const Home = () => {
   return (
-    <Container>
-      <Title>Enter a City and State</Title>
-      <SearchBar />
+    <Container data-test="HomeComponent">
+      <Title data-test="title">Enter a City and State</Title>
+      <SearchBar data-test="search" />
     </Container>
   );
 };

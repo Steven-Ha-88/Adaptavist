@@ -1,12 +1,9 @@
 import {
   FETCH_WEATHER,
-  //FETCH_DETAILS,
   FETCH_WEATHER_ERROR,
   FETCH_NAME,
   LOADING,
   FETCH_DETAILS
-  //FILTER_DAY
-  //FILTER_HOUR
 } from "./types";
 import weatherApi from "./../api";
 import history from "./../history";
@@ -42,7 +39,7 @@ export const getData = city => async dispatch => {
     const response = await weatherApi.get("/data/2.5/forecast", {
       params: {
         q: city,
-        appid: "bcf9d23e76dcc63bc158942ceea4c302"
+        appid: process.env.REACT_APP_API_KEY
       }
     });
     // console.log("response", response.data.list);
@@ -59,10 +56,9 @@ export const getCurrentWeather = city => async dispatch => {
     const response = await weatherApi.get("/data/2.5/weather", {
       params: {
         q: city,
-        appid: "bcf9d23e76dcc63bc158942ceea4c302"
+        appid: process.env.REACT_APP_API_KEY
       }
     });
-    console.log("response", response);
     dispatch(fetchDetailSuccess(response.data));
     history.push("/weather");
   } catch (e) {

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const City = styled.div`
+export const Container = styled.div``;
+
+export const Title = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   display: flex;

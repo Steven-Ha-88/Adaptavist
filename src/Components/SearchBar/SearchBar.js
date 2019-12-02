@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Input, Container, Button, Form } from "./styles";
 import { getData, getCurrentWeather } from "./../../Actions/index";
+import PropTypes from "prop-types";
 
 const SearchBar = props => {
   const { row } = props;
@@ -17,7 +18,7 @@ const SearchBar = props => {
   };
 
   return (
-    <Container>
+    <Container data-test="SearchBar Component">
       <Form onSubmit={handleClick} row={row}>
         <Input
           onChange={e => setCity(e.target.value)}
@@ -30,6 +31,10 @@ const SearchBar = props => {
       </Form>
     </Container>
   );
+};
+
+SearchBar.propTypes = {
+  row: PropTypes.bool
 };
 
 export default SearchBar;
